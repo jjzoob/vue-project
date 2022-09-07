@@ -1,0 +1,30 @@
+{
+  "canisters": {
+    "ic_backend": {
+      "main": "src/ic_backend/main.mo",
+      "type": "motoko"
+    },
+    "ic_frontend": {
+      "dependencies": ["ic_backend"],
+      "frontend": {
+        "entrypoint": "dist/index.html"
+      },
+      "source": ["dist"],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.11.2",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
